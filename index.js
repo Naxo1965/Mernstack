@@ -15,7 +15,7 @@ appserver.use(cors());
 appserver.use(express.json({ extended: true}));
 
 // puerto de la appserver
-const PORT = process.env.PORT || 4000;
+const port = process.env.port || 4000;
 
 /*/ definimos la pagina principal
 appserver.get('/', (req, res) => {
@@ -30,7 +30,7 @@ appserver.use('/api/proyectos', require('./routes/proyectos'));
 appserver.use('/api/tareas', require('./routes/tareas'));
 
 // arrancamos la app Y como callback le lanzamos un mensaje
-appserver.listen(PORT, () => {
+appserver.listen(port, '0.0.0.0', () => {
     console.log(`El servidor esta funcionando en el puerto ${PORT}`);
 })
 
